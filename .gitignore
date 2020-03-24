@@ -1,0 +1,12 @@
+.idea
+.vscode/*
+config.yaml
+config-*.yaml
+tmp
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Ignore vim cache
+*.swp
