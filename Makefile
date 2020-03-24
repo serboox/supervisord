@@ -13,14 +13,18 @@ endif
 # Default target executed when no arguments are given to make.
 default_target: run
 
-
-
 clean:
 	@echo "+ $@"
 	rm -f ${APP}
 
 run-test-http-server:
 	@echo "+ $@"
-	cd http-server && go run main.go
+	cd http-server \
+		&& GO111MODULE=on golangci-lint run -c ../.golangci.yml ./... \
+		&& go run main.go
+
+golangci-lint:
+	@echo "+ $@"
+	GO111MODULE=on golangci-lint run ./...
 
 
