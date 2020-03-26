@@ -26,6 +26,7 @@ run:
   #   	vendor$, third_party$, testdata$, examples$, Godeps$, builtin$
   skip-dirs:
     - vendor
+    - tmp
 
   # which files to skip: they will be analyzed, but issues from them
   # won't be reported. Default value is empty list, but there is
@@ -193,6 +194,13 @@ linters:
     - dupl
     - gochecknoglobals
     - gomnd
+    - stylecheck
+    - gosec
+    - gochecknoinits
+    - funlen
+    - gocognit
+    - gocritic
+    - ineffassign
   # disable-all: false
   # presets:
   #  - bugs
@@ -211,7 +219,7 @@ issues:
   # it can be disabled by this option. To list all
   # excluded by default patterns execute `golangci-lint run --help`.
   # Default value for this option is true.
-  exclude-use-default: true
+  exclude-use-default: false
 
   # Maximum issues count per one linter. Set to 0 to disable. Default is 50.
   max-per-linter: 50

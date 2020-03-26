@@ -2,18 +2,16 @@
   rev: master
   hooks:
     - id: go-fmt
-      exclude: '^vendor/'
+      exclude: '^(vendor|http-server)/'
     - id: go-vet
-      exclude: '^vendor/'
+      exclude: '^(vendor|http-server)/'
     - id: go-lint
-      exclude: '^vendor/'
+      exclude: '^(vendor|http-server)/'
     - id: go-imports
-      exclude: '^vendor/'
-    - id: go-cyclo
-      args: [-over=15]
-      exclude: '^vendor/'
+      exclude: '^(vendor|http-server)/'
+    #- id: go-cyclo
+    #  args: [-over=15]
     - id: validate-toml
-      exclude: '^vendor/'
     # - id: no-go-testing
     # - id: gometalinter
     # - id: golangci-lint
